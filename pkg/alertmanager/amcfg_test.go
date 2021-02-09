@@ -501,6 +501,7 @@ templates: []
 			baseConfig: alertmanagerConfig{
 				Global: &globalConfig{
 					SlackAPIURL: &config.URL{URL: globalSlackAPIURL},
+					SMTPRequireTLS: false
 				},
 				Route: &route{
 					Receiver: "null",
@@ -544,6 +545,7 @@ templates: []
 			expected: `global:
   resolve_timeout: 0s
   slack_api_url: http://slack.example.com
+  smtp_require_tls: false
 route:
   receiver: "null"
   routes:
